@@ -8,6 +8,12 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'mattn/emmet-vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'Yggdroot/indentLine'
+Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
+Plug 'raimondi/delimitmate'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 " ==== END::VIMPLUG ===================================================
@@ -17,10 +23,29 @@ autocmd VimEnter * NERDTree
 autocmd BufWinEnter * NERDTreeMirror
 
 " INDENTLINE
-let g:indentLine_char = '┆'
+let g:indentLine_char = '┊'
 
-    " disable auto-hide double quote in json
-    let g:indentLine_setConceal = 0
+" highlight conceal color with colorscheme
+let g:indentLine_color_term = 239
+
+" disable auto-hide double quote in json
+"let g:indentLine_setConceal = 0
+let g:vim_json_syntax_conceal = 0
+
+" AIRLINE
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+" DELIMITMATE
+" turns on the expansion of <CR>
+let delimitMate_expand_cr = 1
+" turns on the expansion of <Space>
+let delimitMate_expand_space = 1
+
+" EMMET
+" expand emmet using <tab>
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " Don't include vi compatibility
 set nocompatible
@@ -90,7 +115,7 @@ filetype indent on
 filetype plugin on
 
 " set color scheme
-colorscheme solarized
+colorscheme gruvbox
 set background=dark
 
 " number of lines of context to keep above and below
@@ -115,3 +140,11 @@ let mapleader = ','
 " change escape key to hh
 imap hh <Esc>
 
+" open NERDTree using <leader>n
+nmap <leader>n :NERDTree<cr>
+
+" easier buffer switching
+nmap <leader>bn :bn<cr>
+nmap <leader>bp :bp<cr>
+nmap <leader>bd :bd<cr>
+nmap <leader>bb :ls<cr>:b<space>
