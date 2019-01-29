@@ -102,6 +102,9 @@ set cursorline
 set nobackup
 set noswapfile
 
+" disable word wrap
+set nowrap
+
 " Enable syntax highlighting
 syntax on
 
