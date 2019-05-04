@@ -1,9 +1,9 @@
 " ==== VIMPLUG ===================================================
 call plug#begin()
 
-Plug 'altercation/vim-colors-solarized'
-Plug 'scrooloose/nerdtree'
-Plug 'vim-airline/vim-airline'
+"Plug 'altercation/vim-colors-solarized'
+"Plug 'scrooloose/nerdtree'
+"Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mattn/emmet-vim'
 Plug 'easymotion/vim-easymotion'
@@ -14,13 +14,18 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'raimondi/delimitmate'
 Plug 'sheerun/vim-polyglot'
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 " ==== END::VIMPLUG ===================================================
 
+"CtrlP
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_map = '<leader>p'
+
 " NERDTREE
-autocmd VimEnter * NERDTree
-autocmd BufWinEnter * NERDTreeMirror
+"autocmd VimEnter * NERDTree
+"autocmd BufWinEnter * NERDTreeMirror
 
 " INDENTLINE
 let g:indentLine_char = '┊'
@@ -144,7 +149,7 @@ let mapleader = ','
 imap hh <Esc>
 
 " open NERDTree using <leader>n
-nmap <leader>n :NERDTree<cr>
+"nmap <leader>n :NERDTree<cr>
 
 " easier buffer switching
 nmap <leader>bn :bn<cr>
