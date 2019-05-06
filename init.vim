@@ -15,9 +15,17 @@ Plug 'airblade/vim-gitgutter'
 Plug 'raimondi/delimitmate'
 Plug 'sheerun/vim-polyglot'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'fatih/vim-go'
 
 call plug#end()
 " ==== END::VIMPLUG ===================================================
+
+"File Explorer
+" changing the directory view in netrw
+let g:netrw_liststyle = 3
+
+"removing the banner
+let g:netrw_banner = 0
 
 "CtrlP
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
