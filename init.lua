@@ -19,13 +19,41 @@ require('lualine').setup({
 })
 
 -- lsp-zero
-local lsp = require('lsp-zero').preset({})
+local lsp = require('lsp-zero')
+
+lsp.preset("recommended")
+
+lsp.ensure_installed({
+	'lua_ls',
+	'rust_analyzer',
+})
 
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
 end)
 
+require("lspconfig").lua_ls.setup {}
+require("lspconfig").rust_analyzer.setup {}
+
 lsp.setup()
+
+-- You need to setup `cmp` after lsp-zero
+local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
+
+cmp.setup({
+  mapping = {
+    -- `Enter` key to confirm completion
+    ['<CR>'] = cmp.mapping.confirm({select = false}),
+
+    -- Ctrl+Space to trigger completion menu
+    ['<C-Space>'] = cmp.mapping.complete(),
+
+    -- Navigate between snippet placeholder
+    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+  }
+})
 
 -- nvim-treesitter
 require'nvim-treesitter.configs'.setup {

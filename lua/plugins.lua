@@ -4,7 +4,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
 	-- packer
 	use 'wbthomason/packer.nvim'
-	
+
 	-- gruvbox-baby
 	use 'luisiacc/gruvbox-baby'
 
@@ -32,7 +32,7 @@ return require('packer').startup(function(use)
 		'nvim-lualine/lualine.nvim',
 		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 	}
-	
+
 	-- lsp-zero
 	use {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -43,7 +43,7 @@ return require('packer').startup(function(use)
 	    {                                      -- Optional
 	      'williamboman/mason.nvim',
 	      run = function()
-		pcall(vim.cmd, 'MasonUpdate')
+			pcall(vim.cmd, 'MasonUpdate')
 	      end,
 	    },
 	    {'williamboman/mason-lspconfig.nvim'}, -- Optional
