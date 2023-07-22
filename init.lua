@@ -133,6 +133,9 @@ vim.g.mapleader = ","
 -- map escape to hh
 imap("hh", "<Esc>")
 
+-- map netrw
+nmap("<leader>fe", ":Ex<CR>")
+
 -- map telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
