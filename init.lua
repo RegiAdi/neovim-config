@@ -1,6 +1,6 @@
 require("plugins")
 
--- COLORSCHEME
+-- colorscheme
 vim.g.gruvbox_baby_use_original_palette = true
 vim.g.gruvbox_baby_telescope_theme = true
 vim.g.gruvbox_baby_variable_style = "NONE"
@@ -11,7 +11,7 @@ vim.g.gruvbox_baby_comment_style = "NONE"
 vim.g.gruvbox_baby_background_color = "dark"
 vim.cmd[[colorscheme gruvbox-baby]]
 
--- LUALINE
+-- lualine
 require('lualine').setup({
 	options = {
 		theme = 'gruvbox-baby'
@@ -27,7 +27,7 @@ end)
 
 lsp.setup()
 
--- TREESITTER
+-- nvim-treesitter
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
   -- ensure_installed = { "go", "php", "javascript", "typescript", "lua", "vim", "vimdoc", "query" },
@@ -57,7 +57,7 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
--- MASON
+-- mason
 require("mason").setup({
 	ui = {
         icons = {
@@ -68,8 +68,8 @@ require("mason").setup({
     }
 })
 
--- vim.o.background = "dark" -- or "light" for light mode
--- vim.cmd([[colorscheme gruvbox]])
+-- leap
+require('leap').add_default_mappings()
 
 -- set encoding
 vim.opt.encoding = "utf-8"
