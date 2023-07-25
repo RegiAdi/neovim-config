@@ -83,6 +83,10 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+
+  indent = {
+    enable = true
+  },
 }
 
 -- mason
@@ -99,6 +103,16 @@ require("mason").setup({
 -- leap
 require('leap').add_default_mappings()
 
+-- harpoon
+require("harpoon").setup({
+    menu = {
+        width = vim.api.nvim_win_get_width(0) - (vim.api.nvim_win_get_width(0) * 50 / 100),
+    }
+})
+
+-- comment
+require('Comment').setup()
+
 -- set encoding
 vim.opt.encoding = "utf-8"
 
@@ -110,10 +124,14 @@ vim.opt.softtabstop = 4
 
 -- use multiple of shiftwidth when indenting with '<' and '>'
 vim.opt.shiftwidth = 4
-vim.opt.shiftround = true
+vim.opt.expandtab = true
+
+-- autoindent
+vim.opt.smartindent = true
 
 -- line numbers on
 vim.opt.nu = true
+vim.opt.relativenumber = true
 
 -- line highlight
 vim.opt.cursorline = true
@@ -125,20 +143,8 @@ vim.opt.swapfile = false
 -- disable word wrap
 vim.opt.wrap = false
 
--- enable syntax highlighting
--- vim.cmd("syntax on")
-
--- enable filetype detection
--- vim.cmd("filetype on")
-
--- enable filetype-specific indenting
--- vim.cmd("filetype indent on")
-
--- enable filetype-specific plugins
--- vim.cmd("filetype plugin on")
-
--- auto read when a file is changed on disk
 vim.opt.autoread = true
+vim.opt.colorcolumn = "80"
 
 ----------------------------------------------------------
 -- KEYBINDINGS
@@ -170,6 +176,18 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+-- harpoon
+local harpoon_mark = require("harpoon.mark")
+local harpoon_ui = require("harpoon.ui")
+
+vim.keymap.set("n", "<leader>h", harpoon_mark.add_file)
+vim.keymap.set("n", "<leader>hp", harpoon_ui.toggle_quick_menu)
+
+vim.keymap.set("n", "<C-h>", function() harpoon_ui.nav_file(1) end)
+vim.keymap.set("n", "<C-t>", function() harpoon_ui.nav_file(2) end)
+vim.keymap.set("n", "<C-n>", function() harpoon_ui.nav_file(3) end)
+vim.keymap.set("n", "<C-s>", function() harpoon_ui.nav_file(4) end)
 
 ----------------------------------------------------------
 -- WORKAROUNDS

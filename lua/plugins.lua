@@ -57,4 +57,21 @@ return require('packer').startup(function(use)
 
 	-- leap
 	use "ggandor/leap.nvim"
+
+	-- nvim-autopairs
+	use {
+		"windwp/nvim-autopairs",
+		config = function() require("nvim-autopairs").setup {} end
+	}
+
+	-- harpoon
+	use "ThePrimeagen/harpoon"
+
+    -- comment
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
 end)
