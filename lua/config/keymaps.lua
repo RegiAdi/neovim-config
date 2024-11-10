@@ -19,6 +19,9 @@ imap("hh", "<Esc>")
 -- map netrw
 nmap("<leader>fe", ":Ex<CR>")
 
+-- map neotree
+nmap("<leader>nt", ":Neotree float<CR>")
+
 -- map telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
