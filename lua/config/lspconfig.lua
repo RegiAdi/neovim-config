@@ -25,5 +25,5 @@ require('lspconfig').ts_ls.setup {
 require('lspconfig').volar.setup {}
 
 require('lspconfig').lua_ls.setup {}
--- require("lspconfig").rust_analyzer.setup {}
--- ...
+
+require('lspconfig').ruff.setup {}
