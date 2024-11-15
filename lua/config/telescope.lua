@@ -1,9 +1,1 @@
-require('telescope').setup({
-  defaults = {
-    borderchars = {
-      prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
-      results = { " " },
-      preview = { " " },
-    },
-  }
-})
+require('telescope').setup({})
