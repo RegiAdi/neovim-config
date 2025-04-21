@@ -39,3 +39,7 @@ lspconfig.ruff.setup {
 lspconfig.rust_analyzer.setup {
     capabilities = capabilities
 }
+
+lspconfig.zls.setup{
+    capabilities = capabilities
+}
