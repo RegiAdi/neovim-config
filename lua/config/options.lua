@@ -30,3 +30,6 @@ vim.opt.wrap = false
 
 vim.opt.autoread = true
 vim.opt.colorcolumn = "80"
+
+-- turn on diagnostic virtual text
+vim.diagnostic.config({ virtual_text = true })
