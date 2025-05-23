@@ -6,15 +6,53 @@ return {
 
 		configs.setup({
 			ensure_installed = {
+                -- a
+                "astro",
+                -- b
+                -- c
 				"c",
-				"lua",
-				"vim",
-				"vimdoc",
-				"javascript",
-                "typescript",
-                "vue",
+                -- d
+                "dockerfile",
+                -- e
+                -- f
+                -- g
+                "go",
+                "gomod",
+                -- h
 				"html",
-                "python"
+                -- i
+                -- j
+                "java",
+				"javascript",
+                "json",
+                -- k
+                -- l
+				"lua",
+                -- m
+                -- n
+                "nginx",
+                -- o
+                -- p
+                "php",
+                "python",
+                -- q
+                -- r
+                "rust",
+                -- s
+                -- t
+                "typescript",
+                "tsx",
+                -- u
+                -- v
+                "vim",
+                "vimdoc",
+                "vue",
+                -- w
+                -- x
+                "xml",
+                -- y
+                -- z
+                "zig",
 			},
 			sync_install = false,
 			highlight = { enable = true },
