@@ -32,4 +32,14 @@ vim.opt.autoread = true
 vim.opt.colorcolumn = "80"
 
 -- turn on diagnostic virtual text
-vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config({
+  -- Use the default configuration
+  -- virtual_lines = true
+
+  -- Alternatively, customize specific options
+  virtual_lines = {
+   -- Only show virtual line diagnostics for the current cursor line
+   current_line = true,
+  },
+})
+
