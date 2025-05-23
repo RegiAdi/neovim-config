@@ -2,10 +2,9 @@ require("mason-lspconfig").setup()
 
 local vue_language_server_path = vim.fn.expand '$MASON/packages' .. '/vue-language-server'
 
-local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-lspconfig.ts_ls.setup {
+vim.lsp.config('ts_ls', {
   init_options = {
     plugins = {
       {
@@ -17,30 +16,25 @@ lspconfig.ts_ls.setup {
   },
   filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
   capabilities = capabilities
-}
+})
 
--- No need to set `hybridMode` to `true` as it's the default value
-lspconfig.volar.setup {
+vim.lsp.config('lua_ls', {
   capabilities = capabilities
-}
+})
 
-lspconfig.lua_ls.setup {
+vim.lsp.config('ruff', {
   capabilities = capabilities
-}
+})
 
-lspconfig.ruff.setup {
-  capabilities = capabilities
-}
-
-lspconfig.rust_analyzer.setup {
+vim.lsp.config('rust_analyzer', {
     capabilities = capabilities
-}
+})
 
-lspconfig.zls.setup{
+vim.lsp.config('zls', {
     capabilities = capabilities
-}
+})
 
-lspconfig.emmet_language_server.setup({
+vim.lsp.config('emmet_language_server', {
   filetypes = {
     "astro",
     "css",
