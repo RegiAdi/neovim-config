@@ -9,4 +9,4 @@ require("config.mini-pairs")
 require("config.indent-blankline")
 require("config.telescope")
 require("config.neotree")
-
+require("config.oil")

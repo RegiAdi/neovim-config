@@ -20,7 +20,11 @@ imap("hh", "<Esc>")
 nmap("<leader>fe", ":Ex<CR>")
 
 -- map neotree
-nmap("<leader>t", ":Neotree float<CR>")
+-- nmap("<leader>t", ":Neotree float<CR>")
+
+-- map oil
+nmap("<leader>t", ":Oil<CR>")
+
 
 -- map telescope
 local builtin = require('telescope.builtin')
