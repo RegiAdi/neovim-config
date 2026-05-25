@@ -31,7 +31,6 @@ return {
                 "lua",
                 -- m
                 "markdown",
-                "markdown_inline",
                 -- m
                 -- n
                 "nginx",
