@@ -26,6 +26,10 @@ vim.lsp.config('ruff', {
   capabilities = capabilities
 })
 
+vim.lsp.config('clangd', {
+    capabilities = capabilities
+})
+
 vim.lsp.config('rust_analyzer', {
     capabilities = capabilities
 })

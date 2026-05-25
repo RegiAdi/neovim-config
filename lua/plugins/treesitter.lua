@@ -11,6 +11,7 @@ return {
                 -- b
                 -- c
 				"c",
+                "cpp",
                 -- d
                 "dockerfile",
                 -- e
@@ -27,7 +28,10 @@ return {
                 "json",
                 -- k
                 -- l
-				"lua",
+                "lua",
+                -- m
+                "markdown",
+                "markdown_inline",
                 -- m
                 -- n
                 "nginx",
