@@ -2,6 +2,7 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
 	config = function ()
+		vim.treesitter.language.add('markdown_inline')
 		local configs = require("nvim-treesitter.configs")
 
 		configs.setup({
@@ -31,6 +32,7 @@ return {
                 "lua",
                 -- m
                 "markdown",
+                "markdown_inline",
                 -- m
                 -- n
                 "nginx",
@@ -58,8 +60,8 @@ return {
                 "zig",
 			},
 			sync_install = false,
-			highlight = { enable = true },
-			indent = { enable = true },
+            highlight = { enable = true },
+            indent = { enable = true },
 		})
 	end
 }
